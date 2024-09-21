@@ -1,3 +1,3 @@
 chrome.runtime.onInstalled.addListener(() => {
-  console.log("NoCookiePlease Extension Installed");
+	console.log("NoCookiePlease Extension Installed");
 });

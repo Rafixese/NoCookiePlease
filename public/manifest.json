@@ -1,25 +1,25 @@
 {
-  "manifest_version": 3,
-  "name": "NoCookiePlease",
-  "version": "0.1.0",
-  "description": "Automatically declines non-essential cookies.",
-  "action": {
-    "default_popup": "popup.html"
-  },
-  "background": {
-    "service_worker": "background.js"
-  },
-  "content_scripts":[
-    {
-      "matches": ["<all_urls>"],
-      "js": ["contentScript.js"],
-      "run_at": "document_idle"
-    }
-  ],
-  "permissions": ["cookies", "storage", "tabs", "activeTab", "scripting"],
-  "icons": {
-    "16": "icon.png",
-    "48": "icon.png",
-    "128": "icon.png"
-  }
+	"manifest_version": 3,
+	"name": "NoCookiePlease",
+	"version": "0.1.0",
+	"description": "Automatically declines non-essential cookies.",
+	"action": {
+		"default_popup": "popup.html"
+	},
+	"background": {
+		"service_worker": "background.js"
+	},
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["contentScript.js"],
+			"run_at": "document_idle"
+		}
+	],
+	"permissions": ["cookies", "storage", "tabs", "activeTab", "scripting"],
+	"icons": {
+		"16": "icon.png",
+		"48": "icon.png",
+		"128": "icon.png"
+	}
 }

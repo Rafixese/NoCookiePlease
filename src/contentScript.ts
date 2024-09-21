@@ -1,19 +1,19 @@
-import { findCookieBanner } from "./cookieUtils/cookieBannerFinder";
+import { findCookieBanner } from "./cookieSearcher/cookieBannerFinder";
 
-console.log("Content script is running!");
+console.log("NOCOOKIEPLEASE is running!");
 
 const observer = new MutationObserver(() => {
-  handleCookieBanner();
+	handleCookieBanner();
 });
 
 observer.observe(document.body, { childList: true, subtree: true });
 
 function handleCookieBanner() {
-  const cookieBanner = findCookieBanner();
-  if (cookieBanner) {
-    console.log("Cookie banner found:", cookieBanner);
-    // observer.disconnect();
-  } else {
-    console.log("No cookie banner found.");
-  }
+	const cookieBanner = findCookieBanner();
+	if (cookieBanner) {
+		console.log("Cookie banner found:", cookieBanner);
+		// observer.disconnect();
+	} else {
+		console.log("No cookie banner found.");
+	}
 }
