@@ -1,5 +1,6 @@
 const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const BrowserExtensionPlugin = require("extension-build-webpack-plugin");
 
 module.exports = {
 	entry: {
@@ -38,6 +39,12 @@ module.exports = {
 			patterns: [
 				{ from: "public", to: "." }, // Copy manifest.json and any static files
 			],
+		}),
+		new BrowserExtensionPlugin({
+			devMode: true,
+			name: "nocookiesplease.zip",
+			directory: "dist",
+			updateType: "minor",
 		}),
 	],
 };
